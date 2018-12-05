@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
@@ -86,7 +87,29 @@ public class MainServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.setContentType("text/html;charset = UTF-8");
+		PrintWriter out = response.getWriter();
+		try {
+		//	request.setAttribute("Charly", "Hockins");
+			String username = request.getParameter("username");
+			
+			out.println("<h2> Welcome " +username+ "</h2>");
+			printAttributes(request);
+		}
+		finally {
+			out.close();
+		}
+	}
+	public static void printAttributes(HttpServletRequest request) {
+		System.out.println();
+		System.out.println("Attributes of: " + request);
+		Enumeration<String> attributes = request.getAttributeNames();
+		while(attributes.hasMoreElements()) {
+			String name = attributes.nextElement();
+			Object value = request.getAttribute(name);
+			System.out.println("\t #Name: " + name);
+			System.out.println("\t Value: " + value);
+		}
 	}
 
 	/**
