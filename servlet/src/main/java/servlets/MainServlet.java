@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +32,7 @@ public class MainServlet extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
+			super.init(config);
 	}
 
 	/**
@@ -42,10 +45,10 @@ public class MainServlet extends HttpServlet {
 	/**
 	 * @see Servlet#getServletConfig()
 	 */
-	public ServletConfig getServletConfig() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	public ServletConfig getServletConfig() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	/**
 	 * @see Servlet#getServletInfo()
@@ -73,12 +76,13 @@ public class MainServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		ServletConfig sc = getServletConfig();
+		//ServletContext cx = sc.getServletContext();
+		ServletContext cx = getServletContext();
 		out.println("<html><body>");
-		out.println("<h1>Welcome from servlet application</h1>");
+		out.println("<h1>Servlet init param:  "+sc.getInitParameter("email")+" </h1>");
+		out.println("<h1>Context init param:  "+cx.getInitParameter("driverName")+" </h1>");
 		out.println("</body></html>");
-		
-		
-	
 	}
 
 	/**
@@ -95,6 +99,9 @@ public class MainServlet extends HttpServlet {
 			
 			out.println("<h2> Welcome " +username+ "</h2>");
 			printAttributes(request);
+			request.setAttribute("username", username);
+			RequestDispatcher rs = request.getRequestDispatcher("hello.jsp");
+			rs.forward(request, response);
 		}
 		finally {
 			out.close();

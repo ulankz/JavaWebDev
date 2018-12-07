@@ -4,16 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Register Form</title>
 </head>
 <body>
-<form method = "post" action ="Validate">
-Name:<input type = "text" name = "username"/>
-<br/>
-Password:<input type = "password" name = "password">
-<br/>
-<input type = "submit" value = "submit">
-</form>
-
+	<form method ="post" action = "register">
+	Name:<input type = "text" name = "username"></br>
+	Email ID: <input type = "text" name = "email"></br>
+	Password:<input type = "text" name = "password"></br>
+	<input type = "submit" value = "register"/>
+	</form>
 </body>
 </html>

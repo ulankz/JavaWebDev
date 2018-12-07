@@ -4,19 +4,70 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+  	<param-name>driverName</param-name>
+  	<param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  
+  <filter>
+  	<filter-name>vFilter</filter-name>
+  	<display-name>ValidationFilter</display-name>
+  	<filter-class>filters.ValidationFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>vFilter</filter-name>
+  	<servlet-name>Welcome</servlet-name>
+  </filter-mapping>
+  
   <servlet>
-  	<servlet-name>MainServlet</servlet-name>
-  	<display-name>MainServlet</display-name>
-  	<description></description>
+  	<servlet-name>Main</servlet-name>
+  	<display-name>Main Servlet Page</display-name>
   	<servlet-class>servlets.MainServlet</servlet-class>
+  	<init-param>
+  		<param-name>email</param-name>
+  		<param-value>ulan.assanov@gmail.com</param-value>
+  	</init-param>
   </servlet>
+  <servlet>
+  	<servlet-name>Validate</servlet-name>
+  	<display-name>Validate</display-name>
+  	<description></description>
+  	<servlet-class>servlets.Validate</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Welcome</servlet-name>
+  	<display-name>Welcome</display-name>
+  	<description></description>
+  	<servlet-class>servlets.Welcome</servlet-class>
+  	
+  </servlet>
+  <servlet>
+  	<servlet-name>register</servlet-name>
+  	<display-name>Register</display-name>
+  	<description></description>
+  	<servlet-class>crud.Register</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
-  	<servlet-name>MainServlet</servlet-name>
-  	<url-pattern>/MainServlet</url-pattern>
+  	<servlet-name>Main</servlet-name>
+  	<url-pattern>/check</url-pattern>
   </servlet-mapping>
-  <welcome-file-list>
+  <servlet-mapping>
+  	<servlet-name>Validate</servlet-name>
+  	<url-pattern>/Validate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Welcome</servlet-name>
+  	<url-pattern>/Welcome</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>register</servlet-name>
+  	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+    <welcome-file-list>
   	<welcome-file>
-  		index.jsp
+  		registration.jsp
   	</welcome-file>
   </welcome-file-list>
 </web-app>

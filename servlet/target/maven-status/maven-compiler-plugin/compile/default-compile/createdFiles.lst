@@ -1,1 +1,5 @@
+crud/Register.class
+filters/ValidationFilter.class
 servlets/MainServlet.class
+servlets/Welcome.class
+servlets/Validate.class
