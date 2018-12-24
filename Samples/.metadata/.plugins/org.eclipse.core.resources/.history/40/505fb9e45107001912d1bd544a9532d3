@@ -1,0 +1,9 @@
+package io.javaee.hibernateDemo.hibernate;
+
+public class HibernateTest {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

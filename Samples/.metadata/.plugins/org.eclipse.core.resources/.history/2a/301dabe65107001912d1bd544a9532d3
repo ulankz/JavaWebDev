@@ -1,0 +1,11 @@
+package io.javaee.hibernateDemo.hibernate;
+
+import io.javaee.hibernateDemo.dto.UserDetails;
+
+public class HibernateTest {
+
+	public static void main(String[] args) {
+		UserDetails user = new UserDetails();
+	}
+
+}

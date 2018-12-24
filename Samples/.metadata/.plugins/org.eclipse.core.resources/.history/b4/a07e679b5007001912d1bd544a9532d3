@@ -1,0 +1,6 @@
+package io.javaee.hibernateDemo.dto;
+
+public class UserDetails {
+	private int userID;
+	
+}

@@ -1,0 +1,13 @@
+INDEX VERSION 1.4+/Users/Ulan/Desktop/Java Interview preparation/Samples/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2188319261.index
+4274305707.index
+287761945.index
+61124512.index
+1157677575.index
+3144480441.index
+824027424.index
+2160973189.index
+1548846863.index
+2087532664.index
+815492507.index
+2638754334.index

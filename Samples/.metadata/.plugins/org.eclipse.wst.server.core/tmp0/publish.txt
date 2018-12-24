@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Dec 13 16:06:16 ALMT 2018
+org.eclipse.jst.j2ee.server\:SessionUrlRewriting=/Users/Ulan/Desktop/Java Interview preparation/JavaEE/Server/apache-tomcat-9.0.13/wtpwebapps/SessionUrlRewriting
+org.eclipse.jst.j2ee.server\:httpSessionDemo=/Users/Ulan/Desktop/Java Interview preparation/JavaEE/Server/apache-tomcat-9.0.13/wtpwebapps/httpSessionDemo
