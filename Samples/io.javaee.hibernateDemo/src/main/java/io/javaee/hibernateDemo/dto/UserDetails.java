@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -72,8 +73,8 @@ public class UserDetails {
 //	})
 //	private Address officeAddress;
 	
-	@ElementCollection
-	@JoinTable(name = "USER_ADDRESS",
+	@ElementCollection(fetch = FetchType.LAZY)
+	@JoinTable(name = "USER_ADDRESS", 
 	joinColumns =@JoinColumn(name = "USER_ID") 
 	)
 	@GenericGenerator(name = "hilo-gen", strategy = "increment")
@@ -135,7 +136,7 @@ public class UserDetails {
 	
 	public String toString(){
 		return "{"+userID+ " | " +userName+ " | "+ description +" | "+workAddress+" | "
-	+joinedDate+ " | " + listOfAddresses.size()+ " }";
+	+joinedDate+ " | " + (listOfAddresses.size() > 0 ? listOfAddresses.get(0).getCity():" addresses are empty ")+ " }";
 		
 	}
 	public List<Address> getListOfAddresses() {

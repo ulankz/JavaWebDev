@@ -46,8 +46,9 @@ public class HibernateTest {
 		session = sFactory.openSession();
 		session.beginTransaction();
 		user = session.get(UserDetails.class,1);
+		
+		
 		System.out.println("\n"+user.toString());
-
 		session.getTransaction().commit();
 		session.close();
 		sFactory.close();
