@@ -1,4 +1,4 @@
-package io.javaee.hibernateDemo.inheritance.dto;
+package io.javaee.hibernateDemo.crud.dto;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

@@ -12,11 +12,9 @@
     <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
          
-        <mapping class = "io.javaee.hibernateDemo.inheritance.dto.Vehicle"/> 
-        <mapping class = "io.javaee.hibernateDemo.inheritance.dto.TwoWheeler"/> 
-        <mapping class = "io.javaee.hibernateDemo.inheritance.dto.FourWheeler"/> 
+        <mapping class = "io.javaee.hibernateDemo.crud.dto.UserDetails"/> 
         
         
     </session-factory>
